@@ -1,0 +1,17 @@
+session_name: dpsh-nuswide
+windows:
+  - window_name: exp
+    layout: tiled
+    shell_command_before:
+      - cd /home/docker/codes/hash/methods/hashing/DPSH_PyTorch # run as a first command in all panes
+    panes:
+      - shell_command: # pane no. 0
+          - python3 run.py --dataset nus-wide-tc21 --root dataset/nuswide --code-length 16 --batch-size 256  --gpu 1
+          - python3 run.py --dataset nus-wide-tc21 --root dataset/nuswide --code-length 128 --batch-size 256  --gpu 1
+      - shell_command: # pane no. 1
+          - python3 run.py --dataset nus-wide-tc21 --root dataset/nuswide --code-length 24 --batch-size 256  --gpu 1
+      - shell_command: # pane no. 2
+          - python3 run.py --dataset nus-wide-tc21 --root dataset/nuswide --code-length 32 --batch-size 256  --gpu 0
+          - python3 run.py --dataset nus-wide-tc21 --root dataset/nuswide --code-length 64 --batch-size 256  --gpu 0
+      - shell_command: # pane no. 3
+          - python3 run.py --dataset nus-wide-tc21 --root dataset/nuswide --code-length 48 --batch-size 256  --gpu 0

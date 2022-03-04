@@ -1,0 +1,11 @@
+__pycache__/
+temp/
+.idea/
+*.png
+*.mat
+*.pt
+*.npy
+*.npz
+data/
+temp_*
+results/

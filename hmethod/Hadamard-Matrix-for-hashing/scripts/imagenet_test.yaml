@@ -1,0 +1,19 @@
+session_name: csq-imagenet
+windows:
+  - window_name: exp
+    layout: tiled
+    shell_command_before:
+      - cd /home/docker/codes/hash/methods/hashing/DPSH_PyTorch # run as a first command in all panes
+    panes:
+      - shell_command: # pane no. 0
+          - python3 test.py --gpus 0,1 --R 50000 --data_name imagenet --hash_bit 16 --model_name imagenet_16bit_0.851_resnet50.pkl
+      - shell_command: # pane no. 1
+          - python3 test.py --gpus 0,1 --R 50000 --data_name imagenet --hash_bit 24 --model_name imagenet_24bit_0.8603_resnet50.pkl
+      - shell_command: # pane no. 2
+          - python3 test.py --gpus 0,1 --R 50000 --data_name imagenet --hash_bit 32 --model_name imagenet_32bit_0.865_resnet50.pkl
+      - shell_command: # pane no. 3
+          - python3 test.py --gpus 0,1 --R 50000 --data_name imagenet --hash_bit 48 --model_name imagenet_48bit_0.866_resnet50.pkl
+      - shell_command: # pane no. 4
+          - python3 test.py --gpus 0,1 --R 50000 --data_name imagenet --hash_bit 64 --model_name imagenet_64bit_0.8734_resnet50.pkl
+      - shell_command: # pane no. 5
+          - python3 test.py --gpus 0,1 --R 50000 --data_name imagenet --hash_bit 128 --model_name imagenet_128bit_0.8634_resnet50.pkl

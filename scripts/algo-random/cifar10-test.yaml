@@ -1,0 +1,14 @@
+session_name: random-cifar10-test
+windows:
+  - window_name: exp
+    layout: tiled
+    shell_command_before:
+      - cd /home/docker/codes/hash/methods/bit-select/HBS-RL                   # run as a first command in all panes
+    panes:
+      - shell_command: # pane no. 0
+          - for seed in {1,2,3,4,5};do python3 main.py --test True --method Random --seed $seed --dataset cifar10 --hmethod SH-ITQ-SpH --num_bit 936 --num_subbit 16 --device cuda:1 --exp_name base1;python3 evaluate.py --plot False --dataset cifar10 --method SH-ITQ-SpH{Random}936 --num_bit 16 --topK 50000 --device cuda:1;done
+          - for seed in {1,2,3,4,5};do python3 main.py --test True --method Random --seed $seed --dataset cifar10 --hmethod SH-ITQ-SpH --num_bit 936 --num_subbit 24 --device cuda:1 --exp_name base1;python3 evaluate.py --plot False --dataset cifar10 --method SH-ITQ-SpH{Random}936 --num_bit 24 --topK 50000 --device cuda:1;done
+          - for seed in {1,2,3,4,5};do python3 main.py --test True --method Random --seed $seed --dataset cifar10 --hmethod SH-ITQ-SpH --num_bit 936 --num_subbit 32 --device cuda:1 --exp_name base1;python3 evaluate.py --plot False --dataset cifar10 --method SH-ITQ-SpH{Random}936 --num_bit 32 --topK 50000 --device cuda:1;done
+          - for seed in {1,2,3,4,5};do python3 main.py --test True --method Random --seed $seed --dataset cifar10 --hmethod SH-ITQ-SpH --num_bit 936 --num_subbit 48 --device cuda:1 --exp_name base1;python3 evaluate.py --plot False --dataset cifar10 --method SH-ITQ-SpH{Random}936 --num_bit 48 --topK 50000 --device cuda:1;done
+          - for seed in {1,2,3,4,5};do python3 main.py --test True --method Random --seed $seed --dataset cifar10 --hmethod SH-ITQ-SpH --num_bit 936 --num_subbit 64 --device cuda:1 --exp_name base1;python3 evaluate.py --plot False --dataset cifar10 --method SH-ITQ-SpH{Random}936 --num_bit 64 --topK 50000 --device cuda:1;done
+          - for seed in {1,2,3,4,5};do python3 main.py --test True --method Random --seed $seed --dataset cifar10 --hmethod SH-ITQ-SpH --num_bit 936 --num_subbit 128 --device cuda:1 --exp_name base1;python3 evaluate.py --plot False --dataset cifar10 --method SH-ITQ-SpH{Random}936 --num_bit 128 --topK 50000 --device cuda:1;done

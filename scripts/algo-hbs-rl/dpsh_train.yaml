@@ -1,0 +1,38 @@
+session_name: dpsh-train
+windows:
+  - window_name: exp
+    layout: tiled
+    shell_command_before:
+      - cd /home/docker/codes/hash/methods/bit-select/HBS-RL                   # run as a first command in all panes
+    panes:
+      - shell_command:           # pane no. 0
+          - for seed in {1,2,3,4,5};do python3 main.py --test False --seed $seed --subref_size 1000 --subval_size 1000 --method PPO --num_epoch_step 64  --ent_coef 0.02 --num_bit 312 --num_subbit 16  --device cuda:0 --dataset imagenet --hmethod DPSH --exp_name base1;done
+          - for seed in {1,2,3,4,5};do python3 main.py --test False --seed $seed --subref_size 1000 --subval_size 1000 --method PPO --num_epoch_step 64  --ent_coef 0.02 --num_bit 312 --num_subbit 16  --device cuda:0 --dataset nuswide --hmethod DPSH --exp_name base1;done
+          - for seed in {1,2,3,4,5};do python3 main.py --test False --seed $seed --subref_size 1000 --subval_size 1000 --method PPO --num_epoch_step 64  --ent_coef 0.02 --num_bit 296 --num_subbit 16  --device cuda:0 --dataset imagenet --hmethod DPSH --exp_name base1-miss1;done
+          - for seed in {1,2,3,4,5};do python3 main.py --test False --seed $seed --subref_size 1000 --subval_size 1000 --method PPO --num_epoch_step 64  --ent_coef 0.02 --num_bit 296 --num_subbit 16  --device cuda:0 --dataset nuswide --hmethod DPSH --exp_name base1-miss1;done
+          - for seed in {1,2,3,4,5};do python3 main.py --test False --seed $seed --subref_size 1000 --subval_size 1000 --method PPO --num_epoch_step 128 --ent_coef 0 --num_bit 184 --num_subbit 128 --device cuda:0 --dataset nuswide --hmethod DPSH --exp_name base1-miss1;done
+      - shell_command:           # pane no. 1
+          - for seed in {1,2,3,4,5};do python3 main.py --test False --seed $seed --subref_size 1000 --subval_size 1000 --method PPO --num_epoch_step 96  --ent_coef 0.02 --num_bit 312 --num_subbit 24  --device cuda:1 --dataset imagenet --hmethod DPSH --exp_name base1;done
+          - for seed in {1,2,3,4,5};do python3 main.py --test False --seed $seed --subref_size 1000 --subval_size 1000 --method PPO --num_epoch_step 96  --ent_coef 0.02 --num_bit 312 --num_subbit 24  --device cuda:1 --dataset nuswide --hmethod DPSH --exp_name base1;done
+          - for seed in {1,2,3,4,5};do python3 main.py --test False --seed $seed --subref_size 1000 --subval_size 1000 --method PPO --num_epoch_step 96  --ent_coef 0.02 --num_bit 288 --num_subbit 24  --device cuda:1 --dataset imagenet --hmethod DPSH --exp_name base1-miss1;done
+          - for seed in {1,2,3,4,5};do python3 main.py --test False --seed $seed --subref_size 1000 --subval_size 1000 --method PPO --num_epoch_step 96  --ent_coef 0.02 --num_bit 288 --num_subbit 24  --device cuda:1 --dataset nuswide --hmethod DPSH --exp_name base1-miss1;done
+          - for seed in {1,2,3,4,5};do python3 main.py --test False --seed $seed --subref_size 1000 --subval_size 1000 --method PPO --num_epoch_step 64  --ent_coef 0.02 --num_bit 248 --num_subbit 64  --device cuda:1 --dataset nuswide --hmethod DPSH --exp_name base1-miss1;done
+      - shell_command:           # pane no. 2
+          - for seed in {1,2,3,4,5};do python3 main.py --test False --seed $seed --subref_size 1000 --subval_size 1000 --method PPO --num_epoch_step 64  --ent_coef 0.02 --num_bit 312 --num_subbit 32  --device cuda:1 --dataset imagenet --hmethod DPSH --exp_name base1;done
+          - for seed in {1,2,3,4,5};do python3 main.py --test False --seed $seed --subref_size 1000 --subval_size 1000 --method PPO --num_epoch_step 64  --ent_coef 0.02 --num_bit 312 --num_subbit 32  --device cuda:1 --dataset nuswide --hmethod DPSH --exp_name base1;done
+          - for seed in {1,2,3,4,5};do python3 main.py --test False --seed $seed --subref_size 1000 --subval_size 1000 --method PPO --num_epoch_step 64  --ent_coef 0.02 --num_bit 280 --num_subbit 32  --device cuda:1 --dataset imagenet --hmethod DPSH --exp_name base1-miss1;done
+          - for seed in {1,2,3,4,5};do python3 main.py --test False --seed $seed --subref_size 1000 --subval_size 1000 --method PPO --num_epoch_step 64  --ent_coef 0.02 --num_bit 280 --num_subbit 32  --device cuda:1 --dataset nuswide --hmethod DPSH --exp_name base1-miss1;done
+      - shell_command:           # pane no. 3
+          - for seed in {1,2,3,4,5};do python3 main.py --test False --seed $seed --subref_size 1000 --subval_size 1000 --method PPO --num_epoch_step 96  --ent_coef 0.02 --num_bit 312 --num_subbit 48  --device cuda:0 --dataset imagenet --hmethod DPSH --exp_name base1;done
+          - for seed in {1,2,3,4,5};do python3 main.py --test False --seed $seed --subref_size 1000 --subval_size 1000 --method PPO --num_epoch_step 96  --ent_coef 0.02 --num_bit 312 --num_subbit 48  --device cuda:0 --dataset nuswide --hmethod DPSH --exp_name base1;done
+          - for seed in {1,2,3,4,5};do python3 main.py --test False --seed $seed --subref_size 1000 --subval_size 1000 --method PPO --num_epoch_step 96  --ent_coef 0.02 --num_bit 264 --num_subbit 48  --device cuda:0 --dataset imagenet --hmethod DPSH --exp_name base1-miss1;done
+          - for seed in {1,2,3,4,5};do python3 main.py --test False --seed $seed --subref_size 1000 --subval_size 1000 --method PPO --num_epoch_step 96  --ent_coef 0.02 --num_bit 264 --num_subbit 48  --device cuda:0 --dataset nuswide --hmethod DPSH --exp_name base1-miss1;done
+      - shell_command:           # pane no. 4
+          - for seed in {1,2,3,4,5};do python3 main.py --test False --seed $seed --subref_size 1000 --subval_size 1000 --method PPO --num_epoch_step 64  --ent_coef 0.02 --num_bit 312 --num_subbit 64  --device cuda:0 --dataset imagenet --hmethod DPSH --exp_name base1;done
+          - for seed in {1,2,3,4,5};do python3 main.py --test False --seed $seed --subref_size 1000 --subval_size 1000 --method PPO --num_epoch_step 64  --ent_coef 0.02 --num_bit 312 --num_subbit 64  --device cuda:0 --dataset nuswide --hmethod DPSH --exp_name base1;done
+          - for seed in {1,2,3,4,5};do python3 main.py --test False --seed $seed --subref_size 1000 --subval_size 1000 --method PPO --num_epoch_step 64  --ent_coef 0.02 --num_bit 248 --num_subbit 64  --device cuda:0 --dataset imagenet --hmethod DPSH --exp_name base1-miss1;done
+      - shell_command:           # pane no. 5
+          - for seed in {1,2,3,4,5};do python3 main.py --test False --seed $seed --subref_size 1000 --subval_size 1000 --method PPO --num_epoch_step 128 --ent_coef 0 --num_bit 312 --num_subbit 128 --device cuda:1 --dataset imagenet --hmethod DPSH --exp_name base1;done
+          - for seed in {1,2,3,4,5};do python3 main.py --test False --seed $seed --subref_size 1000 --subval_size 1000 --method PPO --num_epoch_step 128 --ent_coef 0 --num_bit 312 --num_subbit 128 --device cuda:1 --dataset nuswide --hmethod DPSH --exp_name base1;done
+          - for seed in {1,2,3,4,5};do python3 main.py --test False --seed $seed --subref_size 1000 --subval_size 1000 --method PPO --num_epoch_step 128 --ent_coef 0 --num_bit 184 --num_subbit 128 --device cuda:1 --dataset imagenet --hmethod DPSH --exp_name base1-miss1;done
+

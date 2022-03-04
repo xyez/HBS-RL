@@ -1,0 +1,19 @@
+session_name: csq-nuswide
+windows:
+  - window_name: exp
+    layout: tiled
+    shell_command_before:
+      - cd /home/docker/codes/hash/methods/hashing/DPSH_PyTorch # run as a first command in all panes
+    panes:
+      - shell_command: # pane no. 0
+          - python3 test.py --gpus 0,1 --R 50000 --data_name nuswide --hash_bit 16 --model_name nus_wide_16bit_0.8101_resnet50.pkl
+      - shell_command: # pane no. 1
+          - python3 test.py --gpus 0,1 --R 50000 --data_name nuswide --hash_bit 24 --model_name nuw_wide_24bit_0.7982_resnet50.pkl
+      - shell_command: # pane no. 2
+          - python3 test.py --gpus 0,1 --R 50000 --data_name nuswide --hash_bit 32 --model_name nus_wide_32bit_0.8253_resnet50.pkl
+      - shell_command: # pane no. 3
+          - python3 test.py --gpus 0,1 --R 50000 --data_name nuswide --hash_bit 48 --model_name nus_wide_48bit_0.8114_resnet50.pkl
+      - shell_command: # pane no. 4
+          - python3 test.py --gpus 0,1 --R 50000 --data_name nuswide --hash_bit 64 --model_name nus_wide_64bit_0.8391_resnet50.pkl
+      - shell_command: # pane no. 5
+          - python3 test.py --gpus 0,1 --R 50000 --data_name nuswide --hash_bit 128 --model_name nus_wide_128bit_0.8176_resnet50.pkl
