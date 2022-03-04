@@ -1,0 +1,59 @@
+{
+    "book_prefix":	"/home/docker/codes/hash/methods/bit-select/HBS-RL/data/book/mnist/LSH/",
+    "book_suffix":	"",
+    "clip_v":	false,
+    "cwd":	"/home/docker/codes/hash/methods/bit-select/HBS-RL",
+    "dataset":	"mnist",
+    "device":	"cuda:0",
+    "discount_factor":	0.99,
+    "ent_coef":	0.02,
+    "exp_name":	"ent-0.02-512-32",
+    "exp_path":	"/home/docker/codes/hash/methods/bit-select/HBS-RL/data/checkpoint/mnist/LSH/PPO-ent-0.02/512-32/512-32_s2",
+    "feature_prefix":	"/home/docker/codes/hash/methods/bit-select/HBS-RL/data/feature/mnist",
+    "gamma":	0.25,
+    "hmethod":	"LSH",
+    "index_prefix":	"/home/docker/codes/hash/methods/bit-select/HBS-RL/data/index/mnist/LSH/PPO",
+    "lambda":	1,
+    "logger":	{
+        "<bitselect.PPO.logx.EpochLogger object at 0x7f70f5b9d460>":	{
+            "epoch_dict":	{},
+            "epoch_dict_bak":	{},
+            "exp_name":	"ent-0.02-512-32",
+            "first_row":	true,
+            "log_current_row":	{},
+            "log_headers":	[],
+            "output_dir":	"/home/docker/codes/hash/methods/bit-select/HBS-RL/data/checkpoint/mnist/LSH/PPO-ent-0.02/512-32/512-32_s2",
+            "output_file":	{
+                "<_io.TextIOWrapper name='/home/docker/codes/hash/methods/bit-select/HBS-RL/data/checkpoint/mnist/LSH/PPO-ent-0.02/512-32/512-32_s2/progress.txt' mode='w' encoding='UTF-8'>":	{
+                    "mode":	"w"
+                }
+            }
+        }
+    },
+    "lr":	0.0003,
+    "method":	"PPO",
+    "model_prefix":	"/home/docker/codes/hash/methods/bit-select/HBS-RL/data/checkpoint/mnist/LSH/PPO-ent-0.02",
+    "num_bit":	512,
+    "num_candi":	2,
+    "num_env":	64,
+    "num_episode":	100000,
+    "num_epoch_step":	64,
+    "num_same_neighbor":	30,
+    "num_subbit":	32,
+    "num_train":	3000,
+    "num_train_pi":	80,
+    "num_train_v":	80,
+    "num_val_times":	3,
+    "num_worker":	64,
+    "reward_step":	0,
+    "rho":	0.2,
+    "seed":	2,
+    "subref_size":	5000,
+    "subtest_size":	100,
+    "subval_size":	2000,
+    "target_kl":	0.01,
+    "test":	false,
+    "use_candi":	false,
+    "use_matlab":	false,
+    "use_test":	false
+}
